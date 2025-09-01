@@ -61,5 +61,5 @@ streamlit run admin_app.py
 
 ### 🤝 Поддержка
 
-Если нашли баг или хотите доработку — открывайте [issue](https://github.com/your_repo/issues) или пишите в Telegram: [@your_username](https://t.me/your_username).
+Если нашли баг или хотите доработку — открывайте [issue](https://github.com/constantintesla/MSR_BOT/issues) или пишите в Telegram: [@constantintesla](https://t.me/constantintesla).
 ```
