@@ -23,7 +23,7 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SUPER_ADMINS = [int(x) for x in os.getenv("SUPER_ADMINS", "").split(",") if x]
 GROUPS = [int(x) for x in os.getenv("GROUPS", "").split(",") if x]
-DELETE_AFTER = 30
+DELETE_AFTER = 120
 
 logging.basicConfig(level=logging.INFO)
 storage = MemoryStorage()
@@ -87,12 +87,13 @@ async def on_member(event: ChatMemberUpdated):
         msg = await bot.send_message(
             chat_id,
             f"Добро пожаловать, {user.full_name}!\n"
+            f"Если вы не знаете ответ на вопрос напишите @constantintesla!\n"
             f"Пройдите проверку: нажмите /start у @{bot_username}?start={chat_id}",
         )
         asyncio.create_task(delete_msg_after(chat_id, msg.message_id, DELETE_AFTER))
 
 
-# ---------- /start ----------
+# ---------- /start ----------dw
 @dp.message(Command("start"), F.chat.type == ChatType.PRIVATE)
 async def cmd_start_private(message: Message, command: Command):
     user = message.from_user
